@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="calculadora">
+    <h1>Minha Calculadora</h1>
+    <h3>Primeiro Número:</h3>
+     <input type="number" id="num1" size="35"> <br>
+      <h3>Segundo Número:</h3>
+     <input type="number" id="num2" size="35"> <br>
+    
+     <br>
+     
+     <input type="button" name="btsoma" value="Somar" onclick="calcular('Somar')"> 
+     <input type="button" name="btsub" value="Subtrair" onclick="calcular('Subtrair')">
+     <input type="button" name="btdiv" value="Dividir" onclick="calcular('Dividir')"> 
+     <input type="button" name="btmult" value="Multiplicar" onclick="calcular('Multiplicar')"> 
+
+     <br>
+
+     <p id="resultado">O Resultado é:</p>
+     </div>
+
+     <script>
+        function calcular(operacao){
+      const n1 = parseFloat(document.getElementById('num1').value);
+      const n2 = parseFloat(document.getElementById('num2').value);
+
+      let resultado = 0;
+
+ switch (operacao){
+    case 'Somar':
+        resultado = num1 + num2;
+        break;
+    case 'Subtrair':
+        resultado = num1 - num2;
+        break;
+    case 'Multiplicar':
+        resultado = num1 * num2;
+        break;
+    case 'Dividir':
+        if (num2 === 0){
+            alert("Nenhum número é divisível por 0!");
+            return;
+        }    
+        resultado = num1 / num2;
+        break;
+ }
+ 
+ document.getElementById('resultado').textContent = "O resultado é: " +resultado;
+}
+     </script>    
+</body>
+</html>
